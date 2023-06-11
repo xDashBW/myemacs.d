@@ -233,7 +233,7 @@ In each rule, 1st item is default directory, 2nd item is the shell command.")
 
   (unless (my-buffer-file-temp-p)
     ;;  trim spaces from end of changed line
-    (ws-butler-mode 1)
+    ;; (ws-butler-mode 1)
 
     (unless (featurep 'esup-child)
       (cond
@@ -477,9 +477,9 @@ So it's at the top of clipboard manager."
   (push 'file-remote-p auto-save-exclude)
   (push 'my-file-too-big-p auto-save-exclude)
   (push 'my-check-major-mode-for-auto-save auto-save-exclude)
-  (setq auto-save-idle 2) ; 2 seconds
+  (setq auto-save-idle 200) ; 2 seconds
   (setq auto-save-slient t))
-(my-run-with-idle-timer 4 #'auto-save-enable)
+(my-run-with-idle-timer 400 #'auto-save-enable)
 ;; }}
 
 ;; {{ csv
@@ -659,7 +659,7 @@ ARG is ignored."
                                 search-ring
                                 regexp-search-ring))
 (setq session-save-file-coding-system 'utf-8)
-(add-hook 'after-init-hook 'session-initialize)
+;; (add-hook 'after-init-hook 'session-initialize)
 ;; }}
 
 ;; {{
@@ -1170,7 +1170,7 @@ It's also controlled by `my-lazy-before-save-timer'."
 ;; `helpful-callable' as a drop-in replacement.
 (global-set-key (kbd "C-h f") #'helpful-callable)
 
-(global-set-key (kbd "C-h v") #'helpful-variable)
+;;(global-set-key (kbd "C-h v") #'helpful-variable)
 
 ;; Lookup the current symbol at point. C-c C-d is a common keybinding
 ;; for this in lisp modes.

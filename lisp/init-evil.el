@@ -282,7 +282,7 @@ COUNT, BEG, END, TYPE is used.  If INCLUSIVE is t, the text object is inclusive.
 ;; {{ https://github.com/syl20bnr/evil-escape
 (setq-default evil-escape-delay 0.3)
 (setq evil-escape-excluded-major-modes '(dired-mode))
-(setq-default evil-escape-key-sequence "kj")
+(setq-default evil-escape-key-sequence "qq")
 ;; disable evil-escape when input method is on
 (evil-escape-mode 1)
 ;; }}
@@ -359,8 +359,8 @@ COUNT, BEG, END, TYPE is used.  If INCLUSIVE is t, the text object is inclusive.
 (define-key evil-normal-state-map "Y" (kbd "y$"))
 ;; (define-key evil-normal-state-map (kbd "RET") 'ivy-switch-buffer-by-pinyin) ; RET key is preserved for occur buffer
 (define-key evil-normal-state-map "go" 'goto-char)
-(define-key evil-normal-state-map (kbd "C-]") 'counsel-etags-find-tag-at-point)
-(define-key evil-visual-state-map (kbd "C-]") 'counsel-etags-find-tag-at-point)
+;; (define-key evil-normal-state-map (kbd "C-]") 'counsel-etags-find-tag-at-point)
+;; (define-key evil-visual-state-map (kbd "C-]") 'counsel-etags-find-tag-at-point)
 (define-key evil-insert-state-map (kbd "C-x C-n") 'evil-complete-next-line)
 (define-key evil-insert-state-map (kbd "C-x C-p") 'evil-complete-previous-line)
 (define-key evil-insert-state-map (kbd "C-]") 'aya-expand)
@@ -594,7 +594,6 @@ If N > 0 and in js, only occurrences in current N lines are renamed."
 
 (my-comma-leader-def
   "," 'evilnc-comment-operator
-  "/" 'my-toggle-input-method
   "bf" 'beginning-of-defun
   "bu" 'backward-up-list
   "ef" 'end-of-defun
@@ -690,6 +689,16 @@ If N > 0 and in js, only occurrences in current N lines are renamed."
   "x1" 'delete-other-windows
   "x2" 'split-window-vertically
   "x3" 'split-window-horizontally
+  "x5" 'load-theme
+  "es" 'flymake-show-diagnostics-buffer
+  "lf" 'lsp-format-buffer
+  "pb" 'project-switch-to-buffer
+  "ps" 'project-shell
+  "pe" 'project-eshell
+  "px" 'vterm
+  "pv" 'vterm-other-window
+  "rn" 'rename-buffer
+  ;; "lf" 'eglot-format-buffer
   "xq" 'delete-window
   "xa" 'split-window-vertically
   "xd" 'split-window-horizontally
@@ -716,8 +725,8 @@ If N > 0 and in js, only occurrences in current N lines are renamed."
   "fe" 'flyspell-goto-next-error
   "fa" 'flyspell-auto-correct-word
   "lb" 'langtool-check-buffer
-  "ll" 'langtool-goto-next-error
-  "pe" 'lazyflymake-goto-prev-error
+  ;; "ll" 'langtool-goto-next-error
+  ;; "pe" 'lazyflymake-goto-prev-error
   "ne" 'lazyflymake-goto-next-error
   "og" 'org-agenda
 
@@ -740,10 +749,11 @@ If N > 0 and in js, only occurrences in current N lines are renamed."
   "8" 'winum-select-window-8
   "9" 'winum-select-window-9
   "xm" 'counsel-M-x
-  "xx" 'er/expand-region
+  ;; "xx" 'er/expand-region
   "xf" 'find-file
   "x/" 'find-file-other-window
-  "xb" 'ivy-switch-buffer-by-pinyin
+  "xb" 'ivy-switch-buffer
+  "xx" 'ibuffer
   "xh" 'mark-whole-buffer
   "xk" 'kill-buffer
   "xs" 'save-buffer
@@ -762,6 +772,7 @@ If N > 0 and in js, only occurrences in current N lines are renamed."
   "ih" 'my-git-goto-gutter ; use ivy-mode
   "ir" 'ivy-resume
   "ww" 'my-narrow-or-widen-dwim
+  "lo" 'lsp
   "wf" 'popup-which-function)
 ;; }}
 
@@ -1069,5 +1080,6 @@ I'm not sure this is good idea.")
   (when my-evil-enable-visual-update-x-selection
     (apply orig-func args)))
 (advice-add 'evil-visual-update-x-selection :around #'my-evil-visual-update-x-selection-hack)
+
 
 (provide 'init-evil)

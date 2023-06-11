@@ -160,9 +160,9 @@
 (setq package-archives
       '(
         ;; uncomment below line if you need use GNU ELPA
-        ;; ("gnu" . "https://elpa.gnu.org/packages/")
-        ("melpa" . "https://melpa.org/packages/")
-        ("melpa-stable" . "https://stable.melpa.org/packages/")
+                                 ("gnu"    . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                                 ("melpa"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+                                 ("stable-melpa"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/stable-melpa/")
 
         ;; Use either 163 or tsinghua mirror repository when official melpa
         ;; is slow or shutdown.
@@ -251,70 +251,71 @@ If NO-REFRESH is nil, `package-refresh-contents' is called."
 ;;------------------------------------------------------------------------------
 
 (require-package 'async)
+(require-package 'rime)
 ; color-theme 6.6.1 in elpa is buggy
 (require-package 'amx)
 (require-package 'avy)
 (require-package 'popup) ; some old package need it
 (require-package 'auto-yasnippet)
-(require-package 'csv-mode)
-(require-package 'expand-region) ; I prefer stable version
-(require-package 'fringe-helper)
+;; (require-package 'csv-mode)
+;; (require-package 'expand-region) ; I prefer stable version
+;; (require-package 'fringe-helper)
 (require-package 'wgrep)
-(require-package 'request)
-(require-package 'lua-mode)
-(require-package 'yaml-mode)
-(require-package 'paredit)
-(require-package 'findr)
-(require-package 'diredfl) ; font lock for `dired-mode'
-(require-package 'pinyinlib)
-(require-package 'find-by-pinyin-dired)
-(require-package 'jump)
-(require-package 'nvm)
-(require-package 'writeroom-mode)
-(require-package 'haml-mode)
-(require-package 'markdown-mode)
-(unless *emacs28*
-  (require-package 'link)
-  (require-package 'connection)
+;; (require-package 'request)
+;; (require-package 'lua-mode)
+;; (require-package 'yaml-mode)
+;; (require-package 'paredit)
+;; (require-package 'findr)
+;;(require-package 'diredfl) ; font lock for `dired-mode'
+;; (require-package 'pinyinlib)
+;;(require-package 'find-by-pinyin-dired)
+;;(require-package 'jump)
+;; (require-package 'nvm)
+;; (require-package 'writeroom-mode)
+;; (require-package 'haml-mode)
+;; (require-package 'markdown-mode)
+;; (unless *emacs28*
+;;   (require-package 'link)
+;;   (require-package 'connection)
   ;; dictionary requires 'link and 'connection
-  (require-package 'dictionary))
-(require-package 'htmlize) ; prefer stable version
-(require-package 'jade-mode)
-(require-package 'diminish)
+;;  (require-package 'dictionary))
+;; (require-package 'htmlize) ; prefer stable version
+;; (require-package 'jade-mode)
+;; (require-package 'diminish)
 (require-package 'scratch)
-(require-package 'rainbow-delimiters)
-(require-package 'textile-mode)
+;; (require-package 'rainbow-delimiters)
+;; (require-package 'textile-mode)
 (require-package 'git-timemachine)
-(require-package 'exec-path-from-shell)
+;;(require-package 'exec-path-from-shell)
 (require-package 'ivy)
 (require-package 'swiper)
 (require-package 'counsel) ; counsel => swiper => ivy
 (require-package 'find-file-in-project)
-(require-package 'counsel-bbdb)
-(require-package 'command-log-mode)
-(require-package 'regex-tool)
-(require-package 'groovy-mode)
-(require-package 'emmet-mode)
+;; (require-package 'counsel-bbdb)
+;; (require-package 'command-log-mode)
+;; (require-package 'regex-tool)
+;; (require-package 'groovy-mode)
+;; (require-package 'emmet-mode)
 (require-package 'winum)
-(require-package 'session)
-(require-package 'unfill)
-(require-package 'w3m)
-(require-package 'counsel-gtags)
-(require-package 'buffer-move)
-(require-package 'ace-window)
-(require-package 'cmake-mode)
-(require-package 'cpputils-cmake)
-(require-package 'bbdb)
-(require-package 'pomodoro)
+;; (require-package 'session)
+;; (require-package 'unfill)
+;; (require-package 'w3m)
+;; (require-package 'counsel-gtags)
+;; (require-package 'buffer-move)
+;; (require-package 'ace-window)
+;; (require-package 'cmake-mode)
+;; (require-package 'cpputils-cmake)
+;; (require-package 'bbdb)
+;; (require-package 'pomodoro)
 ;; rvm-open-gem to get gem's code
 (require-package 'rvm)
 ;; C-x r l to list bookmarks
-(require-package 'js-doc)
-(require-package 'js2-mode)
-(require-package 'rjsx-mode)
-(require-package 'tagedit)
-(require-package 'git-link)
-(require-package 'cliphist)
+;; (require-package 'js-doc)
+;; (require-package 'js2-mode)
+;; (require-package 'rjsx-mode)
+;; (require-package 'tagedit)
+;; (require-package 'git-link)
+;; (require-package 'cliphist)
 (require-package 'yasnippet)
 (require-package 'yasnippet-snippets)
 (require-package 'company)
@@ -325,14 +326,14 @@ If NO-REFRESH is nil, `package-refresh-contents' is called."
 (require-package 'lsp-mode)
 (require-package 'elpy)
 (require-package 'legalese)
-(require-package 'simple-httpd)
+;; (require-package 'simple-httpd)
 ;; (require-package 'git-gutter) ; use my patched version
 (require-package 'neotree)
 (require-package 'hydra)
 (require-package 'ivy-hydra) ; @see https://oremacs.com/2015/07/23/ivy-multiaction/
-(require-package 'web-mode)
-(require-package 'iedit)
-(require-package 'websocket) ; for debug debugging of browsers
+;; (require-package 'web-mode)
+;; (require-package 'iedit)
+;; (require-package 'websocket) ; for debug debugging of browsers
 (require-package 'undo-tree)
 (require-package 'evil)
 (require-package 'evil-escape)
@@ -347,9 +348,9 @@ If NO-REFRESH is nil, `package-refresh-contents' is called."
 (require-package 'counsel-css)
 (require-package 'auto-package-update)
 (require-package 'keyfreq)
-(require-package 'adoc-mode) ; asciidoc files
+;; (require-package 'adoc-mode) ; asciidoc files
 (require-package 'shackle)
-(require-package 'toc-org)
+;; (require-package 'toc-org)
 (require-package 'elpa-mirror)
 ;; {{ @see https://pawelbx.github.io/emacs-theme-gallery/
 (require-package 'color-theme)
@@ -358,13 +359,13 @@ If NO-REFRESH is nil, `package-refresh-contents' is called."
 (require-package 'nov) ; read epub
 (require-package 'rust-mode)
 ;; (require-package 'langtool) ; my own patched version is better
-(require-package 'typescript-mode)
+;; (require-package 'typescript-mode)
 ;; run "M-x pdf-tool-install" at debian and open pdf in GUI Emacs
-(require-package 'pdf-tools)
-(require-package 'pyim)
-(require-package 'pyim-wbdict) ; someone may use wubi IME, not me
-(require-package 'pyim-basedict)
-(require-package 'esup)
+;; (require-package 'pdf-tools)
+;; (require-package 'pyim)
+;; (require-package 'pyim-wbdict) ; someone may use wubi IME, not me
+;; (require-package 'pyim-basedict)
+;; (require-package 'esup)
 
 ;; {{ Fixed expiring GNU ELPA keys
 ;; GNU ELPA GPG key will expire on Sep-2019. So we need install this package to
@@ -372,10 +373,10 @@ If NO-REFRESH is nil, `package-refresh-contents' is called."
 ;; @see https://www.reddit.com/r/emacs/comments/bn6k1y/updating_gnu_elpa_keys/
 ;; BTW, this setup uses MELPA only. So GNU ELPA GPG key is not used.
 (require-package 'gnu-elpa-keyring-update)
-;; }}
+;;}}
 
 ;; org => ppt
-(require-package 'org-re-reveal)
+;; (require-package 'org-re-reveal)
 
 (require-package 'git-modes)
 (require-package 'magit)
@@ -383,13 +384,13 @@ If NO-REFRESH is nil, `package-refresh-contents' is called."
 (require-package 'which-key)
 (require-package 'highlight-symbol)
 (require-package 'wc-mode)
-(require-package 'helpful)
-(require-package 'qrencode)
-(require-package 'ws-butler)
-(require-package 'sage-shell-mode)
-(require-package 'graphql-mode)
-(require-package 'ob-sagemath)
-(require-package 'pulseaudio-control)
+;; (require-package 'helpful)
+;; (require-package 'qrencode)
+;; (require-package 'ws-butler)
+;; (require-package 'sage-shell-mode)
+;; (require-package 'graphql-mode)
+;; (require-package 'ob-sagemath)
+;; (require-package 'pulseaudio-control)
 (require-package 'vterm)
 
 (defvar my-color-themes

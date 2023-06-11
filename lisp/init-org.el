@@ -211,9 +211,11 @@ ARG is ignored."
 
   ;; misc
   (setq org-log-done 'time
+        org-agenda-files '("~/.emacs.d/orgtask/毕业.org" "~/.emacs.d/orgtask/求职.org")
         org-edit-src-content-indentation 0
         org-edit-timestamp-down-means-later t
-        org-agenda-start-on-weekday nil ; start on the current day
+        org-agenda-start-on-weekday 6 ; start on the current day
+        org-agenda-span 'day
         org-agenda-include-diary t
         org-agenda-window-setup 'current-window
         org-fast-tag-selection-single-key 'expert
